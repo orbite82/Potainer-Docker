@@ -62,13 +62,13 @@ docker update --restart=always #colocar id do container aqui
 
 #exemplo
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker ps
 CONTAINER ID   IMAGE                    COMMAND        CREATED          STATUS          PORTS                                            NAMES
 243092bb3ff3   portainer/agent          "./agent"      13 minutes ago   Up 13 minutes   0.0.0.0:9001->9001/tcp                           portainer_agent
 cfaf1898e815   portainer/portainer-ce   "/portainer"   18 minutes ago   Up 3 minutes    0.0.0.0:8000->8000/tcp, 0.0.0.0:9000->9000/tcp   portainer
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker update --restart=always 243092bb3ff3 cfaf1898e815
 243092bb3ff3
 cfaf1898e815
@@ -84,26 +84,26 @@ Creating network "potainer_default" with the default driver
 Creating volume "potainer_portainer_data" with default driver
 Creating portainer ... done
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker ps
 CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                                NAMES
 cc5f095448f9   portainer/portainer-ce   "/portainer -H unix:…"   4 seconds ago   Up 2 seconds   8000/tcp, 127.0.0.1:9000->9000/tcp   portainer
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker update --restart=always cc5f095448f9
 cc5f095448f9
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent
 b42f070b9af989efc0fe6b0d9217c93bac59ceb1e4aac7d418a7c16389f73021
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker ps
 CONTAINER ID   IMAGE                    COMMAND                  CREATED              STATUS              PORTS                                NAMES
 b42f070b9af9   portainer/agent          "./agent"                3 seconds ago        Up 2 seconds        0.0.0.0:9001->9001/tcp               portainer_agent
 cc5f095448f9   portainer/portainer-ce   "/portainer -H unix:…"   About a minute ago   Up About a minute   8000/tcp, 127.0.0.1:9000->9000/tcp   portainer
 
-┌─[orbite]:~/-GIT/potainer
+┌─[orbite]:~potainer
 └──> $ docker update --restart=always b42f070b9af9
 b42f070b9af9
 
