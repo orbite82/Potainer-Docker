@@ -1,0 +1,21 @@
+    2  apt update && sudo apt upgrade -y
+    3  apt install software-properties-common -y
+    4  vim /root/.ssh/authorized_keys     
+    8  docker-compose -f docker-compose-portainer.yml  up -d
+    9  #docker update --restart=always
+   10  docker ps
+   11  docker update --restart=always 2e52d22adbed
+   12  vim docker-compose-portainer.yml
+   13  docker ps
+   14  docker restart 2e52d22adbed
+   15  docker ps
+   16  docker rm 2e52d22adbed
+   17  docker stop 2e52d22adbed
+   18  docker rm 2e52d22adbed
+   19  docker-compose -f docker-compose-portainer.yml  up -d
+   20  docker ps
+   21  #ddc0f440513d
+   22  docker update --restart=always ddc0f440513d
+  # base do compose 
+  # https://github.com/edgexfoundry/developer-scripts/blob/master/releases/geneva/compose-files/docker-compose-portainer.yml
+
